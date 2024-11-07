@@ -1,4 +1,5 @@
 import React from 'react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import {
   About,
   Cart,
@@ -12,7 +13,10 @@ import {
   Register,
   SingleProduct,
 } from './pages'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { ErrorElement } from './components'
+
+import { loader as landingLoader } from './pages/Landing'
+import { loader as singleProductLoader } from './pages/SingleProduct'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +27,8 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing />,
+        errorElement: <ErrorElement />,
+        loader: landingLoader,
       },
       {
         path: 'products',
@@ -31,6 +37,8 @@ const router = createBrowserRouter([
       {
         path: 'products/:id',
         element: <SingleProduct />,
+        errorElement: <ErrorElement />,
+        loader: singleProductLoader,
       },
       {
         path: 'cart',
