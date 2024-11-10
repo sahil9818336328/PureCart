@@ -55,7 +55,7 @@ const Login = () => {
         <h4 className='text-center text-3xl font-bold'>Login</h4>
         <FormInput
           type='email'
-          label='name'
+          label='email'
           name='identifier'
           defaultValue='test@test.com'
         />
